@@ -30,18 +30,6 @@ void rc::Raycasting::draw2d(sf::RenderWindow& app) {
         app.draw(ray.vertexArray);
     }
 }
-
-void rc::Raycasting::calc()
-{
-    for (short i = 0; i < RayCounter; i++) {
-        sf::Vector2f diff = sf::Vector2f(
-            rays[i].vertexArray[0].position.x - rays[i].vertexArray[1].position.x,
-            rays[i].vertexArray[0].position.y - rays[i].vertexArray[1].position.y
-            );
-        lenghts[i] = std::hypot(diff.x, diff.y);
-    }
-}
-
 void rc::Raycasting::draw3d(sf::RenderWindow& app)
 {
     for (short i = 0; i < RayCounter; i++) {
@@ -56,7 +44,7 @@ void rc::Raycasting::draw3d(sf::RenderWindow& app)
         float observerAngle = observerRotation - rayAngle;
 
         float maxrl = MaxRayLenght;
-        float height = WindowSizeY - (rayLength / maxrl) * WindowSizeY;
+        float height = WindowSizeY - (rayLength / maxrl) * WindowSizeY * std::cos(observerAngle);
 
         float xPosition = i * DrawWidth;
         float yPosition = WindowSizeY / 2 - height /2;
@@ -67,13 +55,6 @@ void rc::Raycasting::draw3d(sf::RenderWindow& app)
             rect.setFillColor(sf::Color(color, color, color));
             rect.setPosition(xPosition, yPosition);
             app.draw(rect);
-
-        }
-        if (i == RayCounter / 2) {
-            std::cout << height << std::endl;
-            std::cout << rayLength << std::endl;
-            std::cout << MaxRayLenght << std::endl;
-            std::cout << std::endl;
 
         }
     }

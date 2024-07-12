@@ -8,9 +8,12 @@ int main()
 {
     // win2d initalization and configuration
     sf::RenderWindow window2d(sf::VideoMode(800, 600), "2D drawing");
+    window2d.setPosition(sf::Vector2i(1100, 150));
 
     // win3d initalization and configuration
     sf::RenderWindow window3d(sf::VideoMode(WindowSizeX, WindowSizeY), "3D visualization");
+    window3d.setPosition(sf::Vector2i(50, 150));
+    
 
     // Classes
         //Block
@@ -71,6 +74,7 @@ int main()
         {
             if (event3d.type == sf::Event::Closed)
                 window3d.close();
+            observer.take_event(event3d);
         }
 
         window3d.clear();

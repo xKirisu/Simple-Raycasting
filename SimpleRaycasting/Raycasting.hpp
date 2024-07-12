@@ -26,7 +26,6 @@ namespace rc {
 		void cast();
 		void draw2d(sf::RenderWindow& app);
 
-		void calc();
 		void draw3d(sf::RenderWindow& app);
 
 		static sf::Vector2f calculateJump(float& radAngle);
