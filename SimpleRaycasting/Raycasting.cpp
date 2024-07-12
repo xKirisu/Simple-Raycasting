@@ -93,6 +93,7 @@ sf::Vector2f rc::Raycasting::SetRayOnBorder(sf::Vector2f& currentRay, sf::Vector
         sf::Vector2f intersection = findIntersection(previousRay, currentRay, blocklines[i][0], blocklines[i][1]);
 
         if (intersection != sf::Vector2f(-1, -1)) {
+
             result = intersection;
             break;
         }

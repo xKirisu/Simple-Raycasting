@@ -14,7 +14,7 @@ namespace rc{
 			rotateRight = false;
 
 		float moveSpeed = 150;
-		float rotateSpeed = 0.005;
+		float rotateSpeed = 0.015;
 
 		sf::Vector2f position;
 		sf::CircleShape shape;

@@ -9,13 +9,26 @@ int main()
     // win2d initalization and configuration
     sf::RenderWindow window2d(sf::VideoMode(800, 600), "2D drawing");
     window2d.setPosition(sf::Vector2i(1100, 150));
+    window2d.setFramerateLimit(90);
+
 
     // win3d initalization and configuration
     sf::RenderWindow window3d(sf::VideoMode(WindowSizeX, WindowSizeY), "3D visualization");
     window3d.setPosition(sf::Vector2i(50, 150));
-    
+    window3d.setFramerateLimit(90);
 
     // Classes
+        //3D Floor and roof
+        sf::RectangleShape roof;
+        roof.setFillColor(sf::Color(54, 52, 102));
+        roof.setPosition(sf::Vector2f(0, 0));
+        roof.setSize(sf::Vector2f(WindowSizeX, WindowSizeY/2));
+
+        sf::RectangleShape floor;
+        floor.setFillColor(sf::Color(43, 43, 84));
+        floor.setPosition(sf::Vector2f(0, WindowSizeY / 2));
+        floor.setSize(sf::Vector2f(WindowSizeX, WindowSizeY / 2));
+     
         //Block
         sf::RectangleShape block;
         block.setFillColor(sf::Color(55, 55, 55));
@@ -78,6 +91,8 @@ int main()
         }
 
         window3d.clear();
+        window3d.draw(roof);
+        window3d.draw(floor);
         raycasting.draw3d(window3d);
         window3d.display();
     }
