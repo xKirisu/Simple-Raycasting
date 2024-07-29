@@ -39,7 +39,7 @@ int main()
 
         for (short y = 0; y < WorldY; y++){
             for (short x = 0; x < WorldX; x++) {
-                if (WorldMap[y][x] == 1) {
+                if (WorldMap[y][x] != 0) {
                     sf::Vector2f position(x * BlockSize, y * BlockSize);
                     blocks_positions.push_back(position);
                 }

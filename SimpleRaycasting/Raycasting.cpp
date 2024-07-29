@@ -16,8 +16,20 @@ void rc::Raycasting::cast() {
             ray.vertexArray[1].position += rayjump;
             short x = static_cast<short>(ray.vertexArray[1].position.x) / BlockSize;
             short y = static_cast<short>(ray.vertexArray[1].position.y) / BlockSize;
-            if ((x >= 0 && y >= 0) && WorldMap[y][x] == 1) {
+            if ((x >= 0 && y >= 0) && WorldMap[y][x] != 0) {
                 ray.vertexArray[1].position = SetRayOnBorder(ray.vertexArray[1].position, prevray, sf::Vector2f(x, y));
+
+                ray.BlockIndex = WorldMap[y][x];
+                
+                // Calc Texture On Block
+                if (ray.vertexArray[1].position.y == y * BlockSize || ray.vertexArray[1].position.y == y * BlockSize + BlockSize) {
+                    ray.TextureMove = (ray.vertexArray[1].position.x - BlockSize * x) / BlockSize * BlockRectSize;
+                }
+                else {
+                    ray.TextureMove = (ray.vertexArray[1].position.y - BlockSize * y) / BlockSize * BlockRectSize;
+                }
+                
+                
                 break;
             }
         }
@@ -49,12 +61,23 @@ void rc::Raycasting::draw3d(sf::RenderWindow& app)
         float xPosition = i * DrawWidth;
         float yPosition = WindowSizeY / 2 - height /2;
 
-        if (rayLength < 123) {
+        if (rayLength < maxrl - 10) {
             sf::RectangleShape rect(sf::Vector2f(DrawWidth,  height));
+
+            sf::Texture& texture = blockTextures[rays[i].BlockIndex-1];
+            rect.setTexture(&texture);
+
+            blockRect.left = rays[i].TextureMove;
+            rect.setTextureRect(blockRect);
+
             sf::Uint8 color = 255 - (rayLength / maxrl) * 255;
             rect.setFillColor(sf::Color(color, color, color));
             rect.setPosition(xPosition, yPosition);
             app.draw(rect);
+
+            //if (i == RayCounter / 2) { // debug center ray check
+                
+            //}
 
         }
     }

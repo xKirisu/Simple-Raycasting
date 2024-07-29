@@ -8,15 +8,16 @@
 #define WindowSizeY 768
 
 // Raycasting
-#define StandardJump        BlockSize / 10
+#define StandardJump        BlockSize / 12
 #define RayJumps            32 
-#define MaxRayLenght        BlockSize / 10 * RayJumps
+#define MaxRayLenght        BlockSize / 12 * RayJumps
 #define RayCounter          128
 #define HalfRayCounter      RayCounter / 2
 #define FOV                 PI / 3 // Field of View
 #define HalfFOV             FOV / 2
 #define DeltaRayRadAngle    FOV / RayCounter    
 #define DrawWidth           WindowSizeX / RayCounter
+#define BlockRectSize       16
 
 // Map
 #define WorldX 18
@@ -26,14 +27,14 @@ static short WorldMap[WorldY][WorldX] = {
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
     {1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1},
     {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1},
-    {1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1},
+    {1, 0, 0, 2, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1},
     {1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1},
     {1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1},
     {1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1},
-    {1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1},
-    {1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1},
-    {1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1},
-    {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1},
+    {1, 0, 1, 1, 0, 0, 1, 0, 2, 2, 2, 2, 0, 1, 0, 1},
+    {1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 2, 0, 1, 0, 1},
+    {1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 2, 0, 1, 0, 1},
+    {1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1},
     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 };
 #endif // !_RCSettings

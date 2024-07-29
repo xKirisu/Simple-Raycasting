@@ -1,0 +1,21 @@
+﻿  Raycasting.cpp
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(5,20): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(26,99): warning C4244: "=": konwersja z "T" do "short", możliwa utrata danych
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(26,99): warning C4244:         with
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(26,99): warning C4244:         [
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(26,99): warning C4244:             T=float
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(26,99): warning C4244:         ]
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(29,99): warning C4244: "=": konwersja z "T" do "short", możliwa utrata danych
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(29,99): warning C4244:         with
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(29,99): warning C4244:         [
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(29,99): warning C4244:             T=float
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(29,99): warning C4244:         ]
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(36,21): warning C4305: "+=": obcięcie z "double" do "float"
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(61,25): warning C4244: "inicjowanie": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\SimpleRaycasting\Raycasting.cpp(73,29): warning C4244: "inicjowanie": konwersja z "float" do "sf::Uint8", możliwa utrata danych
+  Trwa generowanie kodu
+  2 of 193 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Zakończono generowanie kodu
+  SimpleRaycasting.vcxproj -> C:\Users\xkrys\OneDrive\Pulpit\Simple-Raycasting-master\Simple-Raycasting-master\x64\Release\SimpleRaycasting.exe

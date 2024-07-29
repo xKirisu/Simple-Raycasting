@@ -6,9 +6,12 @@
 namespace rc {
 	struct Ray {
 		sf::VertexArray vertexArray;
-
+		short TextureMove;
+		short BlockIndex;
 		Ray() {
 			vertexArray = sf::VertexArray(sf::Lines, 2);
+			TextureMove = 0;
+			BlockIndex = 0;
 		}
 	};
 	class Raycasting {
@@ -18,9 +21,24 @@ namespace rc {
 		float& observerRotation;
 
 		float lenghts[RayCounter] = { 0 };
+
+		std::vector<sf::Texture> blockTextures;
+		sf::IntRect blockRect;
 	public:
+
 		Raycasting(sf::Vector2f& observerPosition, float& observerRotation) : observerPosition(observerPosition), observerRotation(observerRotation) {
-		
+			sf::Texture texture1;
+			texture1.loadFromFile("Textures/Block_1.png");
+			blockTextures.push_back(texture1);
+
+			sf::Texture texture2;
+			texture2.loadFromFile("Textures/Block_2.png");
+			blockTextures.push_back(texture2);
+
+			blockRect.height = BlockRectSize;
+			blockRect.width = 1;
+			blockRect.left = 0;
+			blockRect.top = 0;
 		}
 
 		void cast();
